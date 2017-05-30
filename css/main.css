@@ -11,8 +11,7 @@ body {
   color: gray;
 }
 #clint-pic {
-  width: 250px;
-  height: 250px;
+  width: 80%;
   margin:20;
 }
 #clint-name {
@@ -25,7 +24,7 @@ body {
   outline: 1px solid;
   position: absolute;
   right: 0;
-  background: yellow;
+  background: white;
   font-size: 160px;
   overflow-y: scroll;
 }

@@ -11,15 +11,15 @@
       <div id="clint-name">{{ myName }}</div>
       <div id="clint-skills">
         <ul id="skills" class="">
-          <li ng-repeat="skill in mySkills">
+          <li ng-repeat="skill in mySkills" ng-click="skillClicked(skill)">
             <img ng-src="{{ skill.icon }}" id="skill-img">
             {{skill.Skill}}
           </li>
         </ul>
       </div>
     </div>
-    <div id="content">
-      ZZ<br>ZZ<br>ZZ<br>ZZ<br>ZZ<br>
+    <div id="content" ng-controller="ContentController">
+      {{contentService.content}}
     </div>
   </body>
 </html>

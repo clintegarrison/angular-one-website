@@ -2,8 +2,17 @@
 
 var app = angular.module('clintegarrison', []);
 
-app.controller('SideNavController', ['$scope',
-  function($scope){
+app.factory('contentService', ['$document',
+  function($document){
+    var contentObj = {
+      content:""
+    }
+
+    return contentObj;
+}]);
+
+app.controller('SideNavController', ['$scope','contentService',
+  function($scope, contentService){
     $scope.myName = "Clint Garrison";
     $scope.mySkills = [
       {
@@ -23,4 +32,15 @@ app.controller('SideNavController', ['$scope',
         "icon": "./images/desktop.png"
       },
     ]
+    $scope.skillClicked = function(skill) {
+      console.log('skill clicked local',skill.Skill)
+      contentService.content = skill.Skill;
+      console.log('skill clicked contentService',contentService.content)
+    }
   }]);
+
+app.controller('ContentController', ['$scope','contentService',
+  function($scope,contentService){
+      $scope.contentService = contentService;
+  }
+]);
