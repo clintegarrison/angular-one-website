@@ -6,9 +6,17 @@
     <link rel = "stylesheet" type = "text/css" href = "./css/main.css" />
   </header>
   <body>
-    <div id="side-nav">
+    <div id="side-nav" ng-controller="SideNavController">
       <img id="clint-pic" src="./images/cxg.png"/>
-      <div id="clint-name">Clint Garrison</div>
+      <div id="clint-name">{{ myName }}</div>
+      <div id="clint-skills">
+        <ul id="skills" class="">
+          <li ng-repeat="skill in mySkills">
+            <img ng-src="{{ skill.icon }}" id="skill-img">
+            {{skill.Skill}}
+          </li>
+        </ul>
+      </div>
     </div>
     <div id="content">
       ZZ<br>ZZ<br>ZZ<br>ZZ<br>ZZ<br>
