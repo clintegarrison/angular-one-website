@@ -25,7 +25,7 @@ body {
   position: absolute;
   right: 0;
   background: white;
-  font-size: 160px;
+  font-size: 20px;
   overflow-y: scroll;
 }
 #skill-img {
@@ -34,4 +34,11 @@ body {
 }
 li {
   list-style-type: none;
+}
+#icon-img {
+  width: 100px;
+  height: 100px;
+}
+#icons{
+  display: inline-block;
 }

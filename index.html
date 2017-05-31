@@ -10,8 +10,8 @@
       <img id="clint-pic" src="./images/cxg.png"/>
       <div id="clint-name">{{ myName }}</div>
       <div id="clint-skills">
-        <ul id="skills" class="">
-          <li ng-repeat="skill in mySkills" ng-click="skillClicked(skill)">
+        <ul id="skills" ng-repeat="skill in mySkills" ng-click="skillClicked(skill)">
+          <li>
             <img ng-src="{{ skill.icon }}" id="skill-img">
             {{skill.Skill}}
           </li>
@@ -19,7 +19,24 @@
       </div>
     </div>
     <div id="content" ng-controller="ContentController">
-      {{contentService.content}}
+      {{contentService.selectedSkill}}
+      <br>
+      <div id="content-icons">
+        <ul id="icons" ng-repeat="icon in icons" ng-click="iconClicked(icon)">
+          <li>
+            <img ng-src="{{ icon.image }}" id="icon-img">
+          </li>
+        </ul>
+      </div>
+      <div id="content-blurbs">
+        <ul id="blurbs" ng-repeat="blurb in blurbs">
+          <li>
+            {{ blurb.title }}
+            <br>
+            {{ blurb.text }}
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
